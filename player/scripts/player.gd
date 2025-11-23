@@ -12,17 +12,18 @@ signal DirectionChanged(new_direction: Vector2)
 @onready var state_machine: PlayerStateMachine = $StateMachine
 
 func _ready():
+	PlayerManager.player = self
 	state_machine.Initialize(self)
-	pass # Replace with function body.
+	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	direction = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down")
 	).normalized()
 	pass
 
-func  _physics_process(delta: float) -> void:
+func  _physics_process(_delta: float) -> void:
 	move_and_slide()
 	
 func SetDirection() -> bool:
