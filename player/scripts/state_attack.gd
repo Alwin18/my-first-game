@@ -5,7 +5,7 @@ class_name State_Attack extends State
 @onready var idle: State = $"../Idle"
 @onready var attack_anim: AnimationPlayer = $"../../Sprite2D/AttackEffectSprite/AnimationPlayer"
 @onready var audio: AudioStreamPlayer2D = $"../../Audio/AudioStreamPlayer2D"
-@onready var hurt_box: HurtBox = $"../../Interactions/HurtBox"
+@onready var hurt_box: HurtBox = %AttackHurtBox
 
 @export var attack_sound: AudioStream
 @export_range(1,20, 0.5) var decelerate_speed: float= 5.0
