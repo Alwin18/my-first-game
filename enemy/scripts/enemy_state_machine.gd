@@ -41,7 +41,7 @@ func  change_state( new_state: EnemyState) -> void:
 	
 	if curr_state:
 		curr_state.exit()
-	
+		
 	prev_state = curr_state
 	curr_state = new_state
 	curr_state.enter()
