@@ -45,7 +45,6 @@ func set_direction() -> bool:
 	
 	if new_dir == cardinal_direction:
 		return false
-	print("new_dir: ", new_dir)
 	cardinal_direction = new_dir
 	direction_changed.emit(new_dir)
 	sprite.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
@@ -60,7 +59,6 @@ func anime_direction() -> String:
 		return "side"
 	
 func update_animation(state: String) -> void:
-	print("state anime_direction: ", state + "_" + anime_direction())
 	animation_player.play(state + "_" + anime_direction())
 	pass	
 
@@ -78,6 +76,7 @@ func  _take_damage(hurt_box: HurtBox) -> void:
 	
 func  update_hp(delta: int) -> void:
 	hp = clampi(hp + delta, 0, max_hp)
+	PlayerHud.update_hp(hp, max_hp)
 	pass
 	
 func make_invulnerable(_duration: float = 1.0) -> void:

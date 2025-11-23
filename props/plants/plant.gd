@@ -5,6 +5,6 @@ class_name Plant extends Node2D
 func _ready() -> void:
 	hitBox.damaged.connect(take_damage)
 
-func take_damage(hurt_box: HurtBox) -> void:
-	print("Plant kena damage:", hurt_box.damage)
-	queue_free() # atau kurangi HP dulu kalau mau
+func take_damage(_hurt_box: HurtBox) -> void:
+	print("TAKE DAMAGE")
+	queue_free()
