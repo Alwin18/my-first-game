@@ -1,22 +1,25 @@
 class_name State extends Node
 
-
-static  var player: Player
+static var player: Player
+static var state_machine: PlayerStateMachine
 
 func _ready() -> void:
-	pass # Replace with function body.
+	pass 
 
-func Enter() -> void:
+func  init() -> void:
 	pass
 
-func  Exit() -> void:
+func enter() -> void:
 	pass
 
-func  Process(_delte: float) -> State:
+func exit() -> void:
+	pass
+
+func process(_delte: float) -> State:
 	return null
 
-func Physics(_delte: float) -> State:
+func physics(_delte: float) -> State:
 	return null
 
-func HandleInput(_event: InputEvent) -> State:
+func handle_input(_event: InputEvent) -> State:
 	return null
